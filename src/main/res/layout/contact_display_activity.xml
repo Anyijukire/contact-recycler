@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvContact"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="#CEFA9B"
@@ -14,17 +15,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clNames"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
             android:textColor="#F44336"
             android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivContact"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Janet" />
 
@@ -32,8 +33,8 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="51dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:textColor="#EF3F07"
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -44,14 +45,24 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:textColor="#F42323"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivContact"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:text="anyijukirjanett@gmail.com" />
+
+        <ImageView
+            android:id="@+id/ivContact"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
