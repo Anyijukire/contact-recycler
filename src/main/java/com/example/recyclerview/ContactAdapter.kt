@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerview.models.Contacts
+import com.example.recyclerview.ui.ContactDetailsActivity
 import com.squareup.picasso.Picasso
 
 class ContactAdapter (var contactList : List<Contacts>, var context:Context):RecyclerView.Adapter<ContactViewHolder>(){
@@ -29,19 +29,16 @@ class ContactAdapter (var contactList : List<Contacts>, var context:Context):Rec
 
 
         holder.cvContact.setOnClickListener {
-            val intent=Intent(context,ContactDetailsActivity::class.java)
-            intent.putExtra("name", currentContact.name)
-            intent.putExtra("phone",currentContact.phoneNumber)
-            intent.putExtra("email",currentContact.email)
-            intent.putExtra("image",currentContact.imageUrl)
+            val intent=Intent(context, ContactDetailsActivity::class.java)
+            intent.putExtra("contactId", currentContact.contactId)
 
             context.startActivity(intent)
         }
-        Picasso.get()
-            .load(currentContact.imageUrl)
-            .resize(80,80)
-            .centerCrop()
-            .into(holder.ivContact)
+//        Picasso.get()
+//            .load(currentContact.imageUrl)
+//            .resize(80,80)
+//            .centerCrop()
+//            .into(holder.ivContact)
     }
 
     override fun getItemCount(): Int {
